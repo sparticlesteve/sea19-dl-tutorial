@@ -1,6 +1,6 @@
-# SC18 Tutorial: Deep Learning At Scale
+# 2019 ECP All-Hands Meeting Tutorial: Deep Learning At Scale
 
-This repository contains the material for the SC18 tutorial:
+This repository contains the material for the ECP AHM tutorial:
 *Deep Learning at Scale*.
 
 Here you will links to slides and resources as well as all the code
@@ -14,20 +14,18 @@ As part of the tutorial, you will
 2. Train a ResNet model to classify the same images on multiple nodes
 
 **Contents**
-* [Links](https://github.com/NERSC/sc18-dl-tutorial#links)
-* [Installation](https://github.com/NERSC/sc18-dl-tutorial#installation)
-* [Navigating the repository](https://github.com/NERSC/sc18-dl-tutorial#navigating-the-repository)
-* [Hands-on walk-through](https://github.com/NERSC/sc18-dl-tutorial#hands-on-walk-through)
-    * [Single node training example](https://github.com/NERSC/sc18-dl-tutorial#single-node-training-example)
-    * [Multi-node training example](https://github.com/NERSC/sc18-dl-tutorial#multi-node-training-example)
-    * [Advanced example: multi-node ResNet50 on ImageNet-100](https://github.com/NERSC/sc18-dl-tutorial#advanced-example-multi-node-resnet50-on-imagenet-100)
-* [Code references](https://github.com/NERSC/sc18-dl-tutorial#code-references)
+* [Links](https://github.com/NERSC/ecp19-dl-tutorial#links)
+* [Installation](https://github.com/NERSC/ecp19-dl-tutorial#installation)
+* [Navigating the repository](https://github.com/NERSC/ecp19-dl-tutorial#navigating-the-repository)
+* [Hands-on walk-through](https://github.com/NERSC/ecp19-dl-tutorial#hands-on-walk-through)
+    * [Single node training example](https://github.com/NERSC/ecp19-dl-tutorial#single-node-training-example)
+    * [Multi-node training example](https://github.com/NERSC/ecp19-dl-tutorial#multi-node-training-example)
+    * [Advanced example: multi-node ResNet50 on ImageNet-100](https://github.com/NERSC/ecp19-dl-tutorial#advanced-example-multi-node-resnet50-on-imagenet-100)
+* [Code references](https://github.com/NERSC/ecp19-dl-tutorial#code-references)
 
 ## Links
 
 Presentation slides: https://drive.google.com/drive/folders/1m_BEBlkbgBHiNg1bzzo74uRh6lJFBjLL?usp=sharing
-
-Join the Slack workspace: https://join.slack.com/t/sc18-tut177/shared_invite/enQtNDY3OTUyNzcwNjI4LWYyNTlkMTI0ZGM5YzI4MDFkNWJiZjBlMjAxMzdiMzI1NTZhYmE5NmNhMzcyYzFhYzQ0ZjczNmJkMzRkZWIyNGY
 
 NERSC JupyterHub: https://jupyter-dev.nersc.gov
 
@@ -35,7 +33,7 @@ NERSC JupyterHub: https://jupyter-dev.nersc.gov
 
 1. Start a terminal on Cori, either via ssh or from the Jupyter interface.
 2. Clone the repository using git:\
-   `git clone https://github.com/NERSC/sc18-dl-tutorial.git`
+   `git clone https://github.com/NERSC/ecp19-dl-tutorial.git`
 
 That's it! The rest of the software (Keras, TensorFlow) is pre-installed on Cori
 and loaded via the scripts used below.
