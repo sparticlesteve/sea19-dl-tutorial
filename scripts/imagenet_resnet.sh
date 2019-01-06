@@ -1,9 +1,8 @@
 #!/bin/bash
 #SBATCH -J imagenet-resnet
-#SBATCH -C knl
+#SBATCH -C haswell
 #SBATCH -N 1
-#SBATCH --reservation=sc18
-#SBATCH -q regular
+#SBATCH -q debug
 #SBATCH -t 30
 #SBATCH -o logs/%x-%j.out
 

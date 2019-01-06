@@ -1,10 +1,9 @@
 #!/bin/bash
 #SBATCH -J cifar-cnn
-#SBATCH -C knl
+#SBATCH -C haswell
 #SBATCH -N 1
-#SBATCH --reservation=sc18
-#SBATCH -q regular
-#SBATCH -t 45
+#SBATCH -q debug
+#SBATCH -t 30
 #SBATCH -o logs/%x-%j.out
 
 . scripts/setup.sh
