@@ -98,7 +98,7 @@ def main():
     opt = get_optimizer(n_ranks=n_ranks, distributed=args.distributed,
                         **config['optimizer'])
     # Compile the model
-    model.compile(loss=train_config['loss'], optimizer=opt,
+    model.compile(optimizer=opt, loss=train_config['loss'],
                   metrics=train_config['metrics'])
     if rank == 0:
         model.summary()
