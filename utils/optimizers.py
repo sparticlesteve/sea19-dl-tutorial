@@ -7,7 +7,6 @@ import math
 
 # Externals
 import keras
-import horovod.keras as hvd
 
 def get_optimizer(name, lr, lr_scaling='linear', n_ranks=1,
                   distributed=False, **opt_args):
@@ -27,6 +26,7 @@ def get_optimizer(name, lr, lr_scaling='linear', n_ranks=1,
 
     # Distributed optimizer wrapper
     if distributed:
+        import horovod.keras as hvd
         opt = hvd.DistributedOptimizer(opt)
 
     return opt
