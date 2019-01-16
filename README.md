@@ -3,40 +3,36 @@
 This repository contains the material for the ECP AHM tutorial:
 *Deep Learning at Scale*.
 
-Here you will links to slides and resources as well as all the code
-for the hands-on sessions.
-It contains specifications for a few datasets, a couple of CNN models, and
-all the training code to enable training the models in a distributed fashion
-using Horovod.
+Here you will links to slides and resources as well as all the code for the
+examples. It contains specifications for a few datasets, a couple of CNN
+models, and all the training code to enable training the models in a
+distributed fashion using Horovod.
 
-As part of the tutorial, you will
+As part of the tutorial, you will see how to
 1. Train a simple CNN to classify images from the CIFAR10 dataset on a single node
 2. Train a ResNet model to classify the same images on multiple nodes
 
 **Contents**
-* [Links](https://github.com/NERSC/ecp19-dl-tutorial#links)
 * [Installation](https://github.com/NERSC/ecp19-dl-tutorial#installation)
 * [Navigating the repository](https://github.com/NERSC/ecp19-dl-tutorial#navigating-the-repository)
 * [Hands-on walk-through](https://github.com/NERSC/ecp19-dl-tutorial#hands-on-walk-through)
-    * [Single node training example](https://github.com/NERSC/ecp19-dl-tutorial#single-node-training-example)
+    * [Single node training notebook example](https://github.com/NERSC/ecp19-dl-tutorial#single-node-training-notebook)
+    * [Single node training batch example](https://github.com/NERSC/ecp19-dl-tutorial#single-node-batch-training-example)
     * [Multi-node training example](https://github.com/NERSC/ecp19-dl-tutorial#multi-node-training-example)
-    * [Advanced example: multi-node ResNet50 on ImageNet-100](https://github.com/NERSC/ecp19-dl-tutorial#advanced-example-multi-node-resnet50-on-imagenet-100)
+    * [Advanced example: multi-node ResNet50 on ImageNet](https://github.com/NERSC/ecp19-dl-tutorial#advanced-example-multi-node-resnet50-on-imagenet)
 * [Code references](https://github.com/NERSC/ecp19-dl-tutorial#code-references)
-
-## Links
-
-Presentation slides: https://drive.google.com/drive/folders/1m_BEBlkbgBHiNg1bzzo74uRh6lJFBjLL?usp=sharing
-
-NERSC JupyterHub: https://jupyter-dev.nersc.gov
 
 ## Installation
 
-1. Start a terminal on Cori, either via ssh or from the Jupyter interface.
+1. Install dependencies
+  * Python 3.6
+  * A recent TensorFlow (e.g. 1.11) and Keras
+  * Jupyter, matplotlib (to run the example notebooks)
 2. Clone the repository using git:\
    `git clone https://github.com/NERSC/ecp19-dl-tutorial.git`
 
-That's it! The rest of the software (Keras, TensorFlow) is pre-installed on Cori
-and loaded via the scripts used below.
+The examples are setup to use the software installations on Cori at NERSC,
+in which case step 1 is already done.
 
 ## Navigating the repository
 
@@ -60,12 +56,14 @@ for easily submitting the example jobs to the Cori batch system.
 **`utils/`** - contains additional useful code for the training script, e.g.
 custom callbacks, device configuration, and optimizers logic.
 
+**`notebooks/`** - contains the single-node training demo Jupyter notebook
+and a scaling analysis notebook.
+
 ## Hands-on walk-through
 
-Go through the following steps as directed by the tutorial presenters.
-Discuss the questions with your neighbors.
+We will go through the following steps to inspect and run the examples.
 
-### Single node training example
+### Single node training notebook
 
 We will start with single node training of a simple CNN to classify images
 from the CIFAR10 dataset.
@@ -87,17 +85,26 @@ from the CIFAR10 dataset.
       Ask yourself: *why do we have to do this?*
     * *What kinds of data augmentation are we applying?*
 
-3. Next, take a look at the training script: [train.py](train.py).
+3. Next, open up the single node training notebook: [notebooks/Training.ipynb](notebooks/Training.ipynb)
+    * Run the introduction to look at some sample CIFAR images.
+    * Run the model build and training.
+    * Plot the losses and accuracies during training.
+
+### Single node batch training example
+
+This is just a batch script version of the notebook example from above.
+We won't walk through it in the tutorial, but you can run it on your own.
+
+1. Look at the main training script: [train.py](train.py)
     * Identify the part where we retrieve the dataset.
-    * Identify the section where we retrieve the CNN model, the optimizer, and
-      compile the model.
+    * Identify the section where we retrieve the CNN model, the optimizer, and compile the model.
     * Now identify the part where we do the actual training.
 
-4. Finally, look at the configuration file: [configs/cifar10_cnn.yaml](configs/cifar10_cnn.yaml).
+2. Look at the configuration file: [configs/cifar10_cnn.yaml](configs/cifar10_cnn.yaml).
     * YAML allows to express configurations in rich, human-readable, hierarchical structure.
     * Identify where you would edit to modify the optimizer, learning-rate, batch-size, etc.
 
-5. Now we are ready to submit our training job to the Cori batch system.
+3. Now we are ready to submit our training job to the Cori batch system.
    We have provided SLURM scripts to make this as simple as possible.
    To run the simple CNN training on CIFAR10 on a single KNL node, simply do:\
    `sbatch scripts/cifar_cnn.sh`
@@ -105,11 +112,11 @@ from the CIFAR10 dataset.
     autmoatically download the dataset. If you have more than one job attempting
     this download simultaneously it will likely fail.
 
-6. Check on the status of your job by running `sqs`.
+4. Check on the status of your job by running `sqs`.
    Once the job starts running, you should see the output start to appear in the
    slurm log file `logs/cifar-cnn-*.out`.
 
-7. When the job is finished, check the log to identify how well your model learned
+5. When the job is finished, check the log to identify how well your model learned
    to solve the CIFAR10 classification task. For every epoch you should see the
    loss and accuracy reported for both the training set and the validation set.
    Take note of the best validation accuracy achieved.
@@ -128,7 +135,7 @@ amount of time.
    versions of ResNet models: a standard ResNet50 (with 50 layers) and a smaller
    ResNet consisting of 26 layers.
     * Identify the identy block and conv block functions. *How many convolutional
-      layers do each of these have*?
+      layers do each of these blocks have*?
     * Identify the functions that build the ResNet50 and the ResNetSmall. Given how
       many layers are in each block, *see if you can confirm how many layers (conv
       and dense) are in the models*. **Hint:** we don't normally count the
@@ -140,7 +147,7 @@ amount of time.
     * Note how we construct our optimizer and then wrap it in the Horovod
       DistributedOptimizer.
 
-3. Inspect [train.py](train.py) once again.
+3. Inspect the main script [train.py](train.py) once again.
     * Identify the `init_workers` function where we initialize Horovod.
       Note where this is invoked in the main() function (right away).
     * Identify where we setup our training callbacks.
@@ -183,21 +190,15 @@ things like
 Most of these things can be changed entirely within the configuration.
 See [configs/imagenet_resnet.yaml](configs/imagenet_resnet.yaml) for examples.
 
-### Advanced example: multi-node ResNet50 on ImageNet-100
+### Advanced example: multi-node ResNet50 on ImageNet
 
-We may not have the time and compute resources to do this (certainly not for
-all attendees), but this repository also includes a more advanced ResNet50 
-example and a 100-class subset of the ImageNet dataset. ResNet and ImageNet
-are a fairly standard benchmark for scalable deep learning methods.
+We may not have the time to describe this in detail,
+but this repository also includes a more advanced ResNet50 ImageNet example.
+This is a fairly standard benchmark for scalable deep learning methods.
 The configuration is available in
 [configs/imagenet_resnet.yaml](configs/imagenet_resnet.yaml)
 
-Please check with the presenters before submitting large scale training jobs
-with this example, as we have a limited reservation of nodes on Cori and we
-want to make sure all tutorial attendees are able to complete the core content
-and have a chance to play with settings in the ResNet-CIFAR example.
-
-## Code references
+## Code inspirations
 
 Keras ResNet50 official model:
 https://github.com/keras-team/keras-applications/blob/master/keras_applications/resnet50.py
