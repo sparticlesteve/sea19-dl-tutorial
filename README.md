@@ -22,6 +22,16 @@ As part of the tutorial, you will see how to
     * [Advanced example: multi-node ResNet50 on ImageNet](https://github.com/NERSC/ecp19-dl-tutorial#advanced-example-multi-node-resnet50-on-imagenet)
 * [Code inspirations](https://github.com/NERSC/ecp19-dl-tutorial#code-inspirations)
 
+## Tutorial slides
+
+0. [Welcome](https://docs.google.com/presentation/d/1PwpRDpOZj5g7PEND2X2o3gfWDVhFTbWDGZqC-o5ADXU/edit?usp=sharing)
+1. [Introduction to Deep Learning](https://docs.google.com/presentation/d/1n6WCV1uZJEx1Ulx_yJEiR-o5BXCnla3CKS_SwAfWiXM/edit?usp=sharing)
+2. [Deep Learning for Science](https://drive.google.com/file/d/1n2zrnlMR0G_nSF-8NxGsw7sOFubZJdVZ/view?usp=sharing)
+3. [Single node training demo](https://docs.google.com/presentation/d/1cxSoMgtn4PqRw0KF9p37VM9MWLSW2IefTeEu9bvPkO8/edit?usp=sharing)
+4. [Deep Learning scaling](https://docs.google.com/presentation/d/1ySlYaUVWuteXs1sFJkn2lX5E8uKGpW08DqA1Ns_ToGU/edit?usp=sharing)
+5. [Scaling demo](https://docs.google.com/presentation/d/1gnSAC_HXX2S4Vehhd0qEfVedxGJQmJbRoZjpypi3K9M/edit?usp=sharing)
+6. [Closing](https://docs.google.com/presentation/d/1VWjqyazpopH596wexpSVmDcwLScGK4QSV2StRFhGRk4/edit?usp=sharing)
+
 ## Installation
 
 1. Install dependencies
