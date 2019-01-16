@@ -6,13 +6,13 @@ output_dir: $SCRATCH/ecp19-dl-tutorial/imagenet-resnet-N${SLURM_JOB_NUM_NODES}-$
 
 data:
     name: imagenet
-    train_dir: /global/cscratch1/sd/sfarrell/ImageNet-100/train
-    valid_dir: /global/cscratch1/sd/sfarrell/ImageNet-100/validation
+    train_dir: /global/cscratch1/sd/sfarrell/ImageNet/train
+    valid_dir: /global/cscratch1/sd/sfarrell/ImageNet/validation
 
 model:
     name: resnet50
     input_shape: [224, 224, 3]
-    n_classes: 100
+    n_classes: 1000
 
 optimizer:
     name: SGD
