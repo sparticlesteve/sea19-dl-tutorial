@@ -20,7 +20,7 @@ As part of the tutorial, you will see how to
     * [Single node training batch example](https://github.com/NERSC/ecp19-dl-tutorial#single-node-batch-training-example)
     * [Multi-node training example](https://github.com/NERSC/ecp19-dl-tutorial#multi-node-training-example)
     * [Advanced example: multi-node ResNet50 on ImageNet](https://github.com/NERSC/ecp19-dl-tutorial#advanced-example-multi-node-resnet50-on-imagenet)
-* [Code references](https://github.com/NERSC/ecp19-dl-tutorial#code-references)
+* [Code inspirations](https://github.com/NERSC/ecp19-dl-tutorial#code-inspirations)
 
 ## Installation
 
