@@ -12,7 +12,8 @@ As part of the tutorial, you will see how to
 1. Train a simple CNN to classify images from the CIFAR10 dataset on a single node
 2. Train a ResNet model to classify the same images on multiple nodes
 
-**Contents**
+## Contents
+* [Tutorial slides](https://github.com/NERSC/ecp19-dl-tutorial#tutorial-slides)
 * [Installation](https://github.com/NERSC/ecp19-dl-tutorial#installation)
 * [Navigating the repository](https://github.com/NERSC/ecp19-dl-tutorial#navigating-the-repository)
 * [Hands-on walk-through](https://github.com/NERSC/ecp19-dl-tutorial#hands-on-walk-through)
