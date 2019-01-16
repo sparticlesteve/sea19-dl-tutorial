@@ -36,9 +36,9 @@ As part of the tutorial, you will see how to
 ## Installation
 
 1. Install dependencies
-  * Python 3.6
-  * A recent TensorFlow (e.g. 1.11) and Keras
-  * Jupyter, matplotlib (to run the example notebooks)
+    * Python 3.6
+    * A recent TensorFlow (e.g. 1.11) and Keras
+    * Jupyter, matplotlib (to run the example notebooks)
 2. Clone the repository using git:\
    `git clone https://github.com/NERSC/ecp19-dl-tutorial.git`
 
