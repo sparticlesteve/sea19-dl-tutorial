@@ -13,15 +13,15 @@ As part of the tutorial, you will see how to
 2. Train a ResNet model to classify the same images on multiple nodes
 
 ## Contents
-* [Tutorial slides](https://github.com/NERSC/sea19-dl-tutorial#tutorial-slides)
-* [Installation](https://github.com/NERSC/sea19-dl-tutorial#installation)
-* [Navigating the repository](https://github.com/NERSC/sea19-dl-tutorial#navigating-the-repository)
-* [Hands-on walk-through](https://github.com/NERSC/sea19-dl-tutorial#hands-on-walk-through)
-    * [Single node training notebook example](https://github.com/NERSC/sea19-dl-tutorial#single-node-training-notebook)
-    * [Single node training batch example](https://github.com/NERSC/sea19-dl-tutorial#single-node-batch-training-example)
-    * [Multi-node training example](https://github.com/NERSC/sea19-dl-tutorial#multi-node-training-example)
-    * [Advanced example: multi-node ResNet50 on ImageNet](https://github.com/NERSC/sea19-dl-tutorial#advanced-example-multi-node-resnet50-on-imagenet)
-* [Code inspirations](https://github.com/NERSC/sea19-dl-tutorial#code-inspirations)
+* [Tutorial slides](https://github.com/sparticlesteve/sea19-dl-tutorial#tutorial-slides)
+* [Installation](https://github.com/sparticlesteve/sea19-dl-tutorial#installation)
+* [Navigating the repository](https://github.com/sparticlesteve/sea19-dl-tutorial#navigating-the-repository)
+* [Hands-on walk-through](https://github.com/sparticlesteve/sea19-dl-tutorial#hands-on-walk-through)
+    * [Single node training notebook example](https://github.com/sparticlesteve/sea19-dl-tutorial#single-node-training-notebook)
+    * [Single node training batch example](https://github.com/sparticlesteve/sea19-dl-tutorial#single-node-batch-training-example)
+    * [Multi-node training example](https://github.com/sparticlesteve/sea19-dl-tutorial#multi-node-training-example)
+    * [Advanced example: multi-node ResNet50 on ImageNet](https://github.com/sparticlesteve/sea19-dl-tutorial#advanced-example-multi-node-resnet50-on-imagenet)
+* [Code inspirations](https://github.com/sparticlesteve/sea19-dl-tutorial#code-inspirations)
 
 ## Tutorial slides
 
@@ -35,7 +35,7 @@ https://drive.google.com/drive/folders/1beW9h1_XOqL6KJDRqbdWojyHK6rWjMEH?usp=sha
     * A recent TensorFlow (e.g. 1.11) and Keras
     * Jupyter, matplotlib (to run the example notebooks)
 2. Clone the repository using git:\
-   `git clone https://github.com/NERSC/sea19-dl-tutorial.git`
+   `git clone https://github.com/sparticlesteve/sea19-dl-tutorial.git`
 
 The examples are setup to use the software installations on Cori at NERSC,
 in which case step 1 is already done.
